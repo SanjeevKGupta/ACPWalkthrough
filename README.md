@@ -18,8 +18,13 @@ source venv/bin/activate
 ```
 5. Install various packages in the virtual environment
 ```
-pip3 install Crewai, crewai_tools, langchain-groq, acp_sdk
-pip install --upgrade pip
+pip3 install --upgrade pip
+pip3 install Crewai
+pip3 install crewai_tools
+pip3 install ollama
+pip install -U langchain-ollama
+pip3 install acp_sdk
+
 ```
 6. I plan to use LLM locally, hence see Ollama setup.
 - [ollama setup here](https://github.com/SanjeevKGupta/deep-learning-ai/blob/main/ollama/README.md)
