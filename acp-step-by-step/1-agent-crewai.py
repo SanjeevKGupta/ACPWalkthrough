@@ -1,3 +1,20 @@
+# ############################################################# 
+#
+# This example makes use of local ollama to serve the models
+#
+# 1. Make sure to have ollama locally installed and running
+# 2. Download target LLM model from https://ollama.com/library
+# 3. Verify with ollama ls
+#
+# ############################################################# 
+#
+# A simple examplke to create an agent with the specified model
+# 
+# python3 ./1-agent-crewai.py -m ollama/llama3:8b
+# python3 ./1-agent-crewai.py -m ollama/qwen2.5:14b
+#
+# ############################################################# 
+
 import argparse
 
 from crewai import Crew, Task, Agent, LLM
@@ -6,7 +23,7 @@ from crewai_tools import RagTool
 def cli_parse():
     parser = argparse.ArgumentParser(description='Run LLM examples with different LLMs and provider API Keys.')
     parser.add_argument('-m', '--model', type=str, help='source/model name')
-    parser.add_argument('-u', '--url', type=str, help='')
+    parser.add_argument('-u', '--url', type=str, help='LLM URL of the')
 
     args = parser.parse_args()
     if args.model is None:
@@ -20,7 +37,6 @@ def cli_parse():
     return args.model, url
 
 def get_llm(llm_model, llm_url):
-#    LLM(model="ollama/qwen3:8b", base_url="http://localhost:11434", max_tokens=8192)
     return LLM(model=llm_model, base_url=llm_url, max_tokens=8192)
 
 def get_researcher_agent(llm):
