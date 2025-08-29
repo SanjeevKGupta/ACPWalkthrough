@@ -1,9 +1,7 @@
 Sanjeev's notes
-===============
-
+====================
 1. Renamed all the python scripts
 2. Using python virtual environment
-
 ## First time
 
 1. Clone this forked repo on Mac or Linux
